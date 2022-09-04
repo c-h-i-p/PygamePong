@@ -7,12 +7,13 @@ class Game:
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("Pong")
-        self.clock = pygame.time.Clock()
-        self.level = Level()
+        
         if not os.path.exists('highScore.txt'):
             with open('./highScore.txt', 'w') as f:
                 f.write('0, 0')
                 
+        self.clock = pygame.time.Clock()
+        self.level = Level()
 
     
     def run(self):
